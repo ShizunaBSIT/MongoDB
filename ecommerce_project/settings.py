@@ -26,8 +26,14 @@ SECRET_KEY = 'django-insecure-9c%bsw4f3i%d7xm++(yz9k*fji189&0yyl)n2m+9rp_=nx2iz*
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+import os
 
+SECRET_KEY = os.getenv('3u5v=0i*mnr^xo*+kvn603ntyaej3l$q1jxk_&lh#*@n@k&!#v', "fallback_dev_secret")
+DEBUG = False
+ALLOWED_HOSTS = ['https://ecommerce-project-iliz.onrender.com']
+
+OPENAI_KEY = os.getenv("OpenAI")
+MONGO_URI = os.getenv("Mongo_URI")
 
 # Application definition
 
